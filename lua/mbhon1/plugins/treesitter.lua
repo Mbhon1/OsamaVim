@@ -10,6 +10,20 @@ treesitter.setup({
 	highlight = {
 		enable = true,
 	},
+	-- rainbow brackets highlighting
+	rainbow = {
+		enable = true,
+		extended_mode = false,
+		colors = {
+			"Gold",
+			"Orchid",
+			"DodgerBlue",
+			"Cornsilk",
+			"Salmon",
+			"LawnGreen",
+		}, -- table of hex strings
+		-- termcolors = {} -- table of color names
+	},
 	-- enable indentation
 	indent = { enable = true },
 	-- enable autotagging (w/ nvim-ts-autotag plugin)
