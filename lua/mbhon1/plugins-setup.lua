@@ -121,6 +121,14 @@ return packer.startup(function(use)
 	-- syntax highlighting part of treesitter
 	use("p00f/nvim-ts-rainbow")
 
+	-- lsp better error lines
+	use({
+		"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+		config = function()
+			require("lsp_lines").setup()
+		end,
+	})
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
