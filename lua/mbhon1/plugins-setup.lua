@@ -132,6 +132,24 @@ return packer.startup(function(use)
 	-- bufferline
 	use({ "akinsho/bufferline.nvim", tag = "v3.*", requires = "nvim-tree/nvim-web-devicons" })
 
+	-- transparent background
+	use("xiyaowong/transparent.nvim")
+	use("tribela/vim-transparent")
+
+	-- dashboard
+	use({
+		"glepnir/dashboard-nvim",
+		event = "VimEnter",
+		config = function()
+			require("dashboard").setup({
+				-- config
+			})
+		end,
+		requires = { "nvim-tree/nvim-web-devicons" },
+	})
+
+	use("rebelot/kanagawa.nvim")
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
