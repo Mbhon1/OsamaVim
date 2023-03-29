@@ -38,6 +38,7 @@ return packer.startup(function(use)
 	use("lunarvim/onedarker.nvim")
 	use("lunarvim/darkplus.nvim")
 	use("folke/tokyonight.nvim")
+	use("catppuccin/nvim")
 
 	use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 
@@ -143,12 +144,176 @@ return packer.startup(function(use)
 		config = function()
 			require("dashboard").setup({
 				-- config
+				theme = "hyper", --  theme is doom and hyper default is hyper
+				-- disable_move = true, --  defualt is false disable move keymap for hyper
+				-- shortcut_type = "letter", --  shorcut type 'letter' or 'number'
+				-- change_to_vcs_root = true, -- default is false,for open file in hyper mru. it will change to the root of vcs
+				config = {
+					week_header = {
+						enable = true,
+					},
+					shortcut = {
+						{ desc = " Update", group = "@property", action = "Lazy update", key = "u" },
+						{
+							icon = " ",
+							icon_hl = "@variable",
+							desc = "Files",
+							group = "Label",
+							action = "Telescope find_files",
+							key = "f",
+						},
+						{
+							desc = " Apps",
+							group = "DiagnosticHint",
+							action = "Telescope app",
+							key = "a",
+						},
+						{
+							desc = " dotfiles",
+							group = "Number",
+							action = "Telescope dotfiles",
+							key = "d",
+						},
+					},
+				}, --  config used for theme
+				hide = {
+					statusline = false, -- hide statusline default is true
+					tabline = false, -- hide the tabline
+					winbar = false, -- hide winbar
+				},
+				preview = {
+					command = true, -- preview command
+					file_path = true, -- preview file path
+					file_height = false, -- preview file height
+					file_width = false, -- preview file width
+				},
 			})
 		end,
 		requires = { "nvim-tree/nvim-web-devicons" },
 	})
 
 	use("rebelot/kanagawa.nvim")
+
+	-- Spectre search
+	use("windwp/nvim-spectre")
+
+	-- which-key
+	use("folke/which-key.nvim")
+
+	-- vim illuminate
+	use({ "RRethy/vim-illuminate", requires = "nvim-lua/plenary.nvim" })
+
+	-- todo comments
+	use("folke/todo-comments.nvim")
+
+	-- mini animate
+	--[[ 	use("echasnovski/mini.nvim") ]]
+
+	-- session saver
+	use({
+		"glepnir/dbsession.nvim",
+		cmd = { "SessionSave", "SessionDelete", "SessionLoad" },
+		config = function()
+			require("dbsession").setup({})
+		end,
+	})
+
+	-- notify
+	use("rcarriga/nvim-notify")
+
+	-- nui
+	use("MunifTanjim/nui.nvim")
+
+	-- noice
+	use({
+		"folke/noice.nvim",
+		config = function()
+			require("noice").setup({
+				-- add any options here
+				lsp = {
+					-- override markdown rendering so that **cmp** and other plugins use **Treesitter**
+					override = {
+						["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+						["vim.lsp.util.stylize_markdown"] = true,
+						["cmp.entry.get_documentation"] = true,
+					},
+				},
+				-- you can enable a preset for easier configuration
+				-- presets = {
+				--   bottom_search = true, -- use a classic bottom cmdline for search
+				--   command_palette = true, -- position the cmdline and popupmenu together
+				--   long_message_to_split = true, -- long messages will be sent to a split
+				--   inc_rename = false, -- enables an input dialog for inc-rename.nvim
+				--   lsp_doc_border = false, -- add a border to hover docs and signature help
+				-- },
+				views = {
+					cmdline_popup = {
+						position = {
+							row = 5,
+							col = "50%",
+						},
+						size = {
+							width = 60,
+							height = "auto",
+						},
+					},
+					popupmenu = {
+						relative = "editor",
+						position = {
+							row = 8,
+							col = "50%",
+						},
+						size = {
+							width = 60,
+							height = 10,
+						},
+						border = {
+							style = "rounded",
+							padding = { 0, 1 },
+						},
+						win_options = {
+							winhighlight = { Normal = "Normal", FloatBorder = "DiagnosticInfo" },
+						},
+					},
+				},
+			})
+		end,
+		requires = {
+			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+			"MunifTanjim/nui.nvim",
+			-- OPTIONAL:
+			--   `nvim-notify` is only needed, if you want to use the notification view.
+			--   If not available, we use `mini` as the fallback
+			"rcarriga/nvim-notify",
+		},
+	})
+
+	-- dressing
+	use("stevearc/dressing.nvim")
+
+	-- indent scope
+	use("echasnovski/mini.nvim")
+
+	-- alpha
+	use({
+		"goolord/alpha-nvim",
+		config = function()
+			require("alpha").setup(require("alpha.themes.dashboard").config)
+		end,
+	})
+
+	-- persistents
+	use({
+		"folke/persistence.nvim",
+		event = "BufReadPre", -- this will only start session saving when an actual file was opened
+		module = "persistence",
+		config = function()
+			require("persistence").setup()
+		end,
+	})
+
+	-- vista
+	--[[ 	use("liuchengxu/vista.vim") ]]
 
 	if packer_bootstrap then
 		require("packer").sync()
