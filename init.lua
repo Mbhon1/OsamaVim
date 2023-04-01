@@ -19,13 +19,11 @@ require("mbhon1.plugins.colorizer")
 require("mbhon1.plugins.indent")
 require("mbhon1.plugins.lsp-lines")
 require("mbhon1.plugins.bufferline")
---require("mbhon1.plugins.transparent")
 --[[ require("mbhon1.plugins.dashboard") ]]
 require("mbhon1.plugins.spectre")
 require("mbhon1.plugins.which-key")
 require("mbhon1.plugins.vim-illuminate")
 require("mbhon1.plugins.todo-comments")
---[[ require("mbhon1.plugins.mini-animate") ]]
---[[ require("mbhon1.plugins.layout-nui") ]]
---[[ require("mbhon1.plugins.popup-nui") ]]
 require("mbhon1.plugins.dressing")
+require("mbhon1.plugins.noice")
+require("mbhon1.plugins.dbsession")
