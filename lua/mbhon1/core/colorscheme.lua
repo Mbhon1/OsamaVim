@@ -13,58 +13,82 @@
 -- 	return
 -- end
 
--- Onedark theme
-vim.g.onedarker_italic_keywords = true
-vim.g.onedarker_italic_functions = true
-vim.g.onedarker_italic_comments = true
-vim.g.onedarker_italic_loops = true
-vim.g.onedarker_italic_conditionals = true
-vim.g.onedarker_italic_statements = true
-
-local status, _ = pcall(vim.cmd, "colorscheme onedarker")
-if not status then
-	print("Colorscheme not found!") -- print error
-	return
-end
-
--- transparent colorscheme
--- local status, _ = pcall(vim.cmd, "colorscheme kanagawa")
+-- onedarkpro
+-- local status, _ = pcall(vim.cmd, "colorscheme onedark")
 -- if not status then
+-- 	print("Colorscheme not found!")
 -- 	return
 -- end
 --
--- require("kanagawa").setup({
--- 	compile = false, -- enable compiling the colorscheme
--- 	undercurl = true, -- enable undercurls
--- 	commentStyle = { italic = true },
--- 	functionStyle = { italic = true },
--- 	keywordStyle = { italic = true },
--- 	statementStyle = { italic = true },
--- 	loopStyle = { italic = true },
--- 	conditionalStyle = { italic = true },
--- 	typeStyle = { italic = true },
--- 	transparent = true, -- do not set background color
--- 	dimInactive = false, -- dim inactive window `:h hl-NormalNC`
--- 	terminalColors = true, -- define vim.g.terminal_color_{0,17}
--- 	colors = { -- add/modify theme and palette colors
--- 		palette = {},
--- 		theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
+-- require("onedarkpro").setup({
+-- 	styles = {
+-- 		types = "italic",
+-- 		methods = "NONE",
+-- 		numbers = "NONE",
+-- 		strings = "NONE",
+-- 		comments = "italic",
+-- 		keywords = "bold, italic",
+-- 		constants = "italic",
+-- 		functions = "italic",
+-- 		operators = "NONE",
+-- 		variables = "italic",
+-- 		virtual_text = "NONE",
+-- 		parameters = "bold",
+-- 		conditionals = "italic",
 -- 	},
--- 	overrides = function(colors) -- add/modify highlights
--- 		local theme = colors.theme
--- 		return {
--- 			TelescopeTitle = { fg = theme.ui.special, bold = true },
--- 			TelescopePromptNormal = { bg = theme.ui.bg_p1 },
--- 			TelescopePromptBorder = { fg = theme.ui.bg_p1, bg = theme.ui.bg_p1 },
--- 			TelescopeResultsNormal = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m1 },
--- 			TelescopeResultsBorder = { fg = theme.ui.bg_m1, bg = theme.ui.bg_m1 },
--- 			TelescopePreviewNormal = { bg = theme.ui.bg_dim },
--- 			TelescopePreviewBorder = { bg = theme.ui.bg_dim, fg = theme.ui.bg_dim },
--- 		}
--- 	end,
--- 	theme = "wave", -- Load "wave" theme when 'background' option is not set
--- 	background = { -- map the value of 'background' option to a theme
--- 		dark = "wave", -- try "dragon" !
--- 		light = "lotus",
+-- 	options = {
+-- 		transparency = false,
+-- 		highlight_inactive_windows = true,
+-- 		terminal_colors = true,
 -- 	},
---[[ }) ]]
+-- })
+
+-- Onedark theme
+-- vim.g.onedarker_italic_keywords = true
+-- vim.g.onedarker_italic_functions = true
+-- vim.g.onedarker_italic_comments = true
+-- vim.g.onedarker_italic_loops = true
+-- vim.g.onedarker_italic_conditionals = true
+-- vim.g.onedarker_italic_statements = true
+--
+-- local status, _ = pcall(vim.cmd, "colorscheme onedarker")
+-- if not status then
+-- 	print("Colorscheme not found!") -- print error
+-- 	return
+-- end
+
+-- gruvbox
+local status, _ = pcall(vim.cmd, "colorscheme gruvbox")
+if not status then
+	print("Colorscheme not found!")
+	return
+end
+
+vim.o.background = "dark"
+
+require("gruvbox").setup({
+	undercurl = true,
+	underline = true,
+	bold = true,
+	italic = {
+		strings = false,
+		comments = true,
+		operators = true,
+		folds = true,
+		keywords = true,
+		functions = true,
+		loops = true,
+		conditionals = true,
+	},
+	strikethrough = true,
+	invert_selection = false,
+	invert_signs = false,
+	invert_tabline = false,
+	invert_intend_guides = false,
+	inverse = true, -- invert background for search, diffs, statuslines and errors
+	contrast = "hard", -- can be "hard", "soft" or empty string
+	palette_overrides = {},
+	overrides = {},
+	dim_inactive = false,
+	transparent_mode = false,
+})

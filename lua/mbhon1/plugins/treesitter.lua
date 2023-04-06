@@ -9,6 +9,7 @@ treesitter.setup({
 	-- enable syntax highlighting
 	highlight = {
 		enable = true,
+		disable = {},
 	},
 	-- rainbow brackets highlighting
 	rainbow = {
@@ -37,8 +38,8 @@ treesitter.setup({
 		"yaml",
 		"html",
 		"css",
-		-- "markdown",
-		-- "markdown_inline",
+		"markdown",
+		"markdown_inline",
 		"graphql",
 		"bash",
 		"lua",

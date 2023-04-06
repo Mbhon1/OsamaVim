@@ -23,6 +23,11 @@ local plugins = {
 	"folke/tokyonight.nvim",
 	"catppuccin/nvim",
 	"rebelot/kanagawa.nvim",
+	"ellisonleao/gruvbox.nvim",
+	{
+		"olimorris/onedarkpro.nvim",
+		priority = 1000, -- ensure it loads
+	},
 
 	"christoomey/vim-tmux-navigator", -- tmux & split window navigation
 
@@ -108,8 +113,20 @@ local plugins = {
 	-- git integration
 	"lewis6991/gitsigns.nvim", -- show line modifications on left hand side
 	"f-person/git-blame.nvim",
+
 	-- colorizer
-	"norcalli/nvim-colorizer.lua", -- color text according to formats
+	--[[ "norcalli/nvim-colorizer.lua", ]]
+	-- color text according to formats
+	"NvChad/nvim-colorizer.lua",
+	{
+		"roobert/tailwindcss-colorizer-cmp.nvim",
+		-- optionally, override the default options:
+		-- config = function()
+		-- 	require("tailwindcss-colorizer-cmp").setup({
+		-- 		color_square_width = 2,
+		-- 	})
+		-- end,
+	},
 
 	-- indentation style
 	"lukas-reineke/indent-blankline.nvim",
@@ -136,40 +153,6 @@ local plugins = {
 	{
 		"glepnir/dashboard-nvim",
 		event = "VimEnter",
-		config = function()
-			require("dashboard").setup({
-				-- config
-				theme = "hyper",
-				config = {
-					week_header = {
-						enable = true,
-					},
-					shortcut = {
-						{ desc = " Update", group = "@property", action = "Lazy update", key = "u" },
-						{
-							icon = " ",
-							icon_hl = "@variable",
-							desc = "Files",
-							group = "Label",
-							action = "Telescope find_files",
-							key = "f",
-						},
-						{
-							desc = " Apps",
-							group = "DiagnosticHint",
-							action = "Telescope app",
-							key = "a",
-						},
-						{
-							desc = " dotfiles",
-							group = "Number",
-							action = "Telescope dotfiles",
-							key = "d",
-						},
-					},
-				},
-			})
-		end,
 		dependencies = { { "nvim-tree/nvim-web-devicons" } },
 	},
 
@@ -261,6 +244,27 @@ local plugins = {
 	-- 		require("cmp_kitty"):setup()
 	-- 	end,
 	-- },
+	--
+	-- jest tester
+	"David-Kunz/jester",
+
+	-- spotify
+	{
+		"KadoBOT/nvim-spotify",
+		dependencies = "nvim-telescope/telescope.nvim",
+		config = function()
+			local spotify = require("nvim-spotify")
+
+			spotify.setup({
+				-- default opts
+				status = {
+					update_interval = 10000, -- the interval (ms) to check for what's currently playing
+					format = "%s %t by %a", -- spotify-tui --format argument
+				},
+			})
+		end,
+		build = "make",
+	},
 }
 
 local opts = {}
