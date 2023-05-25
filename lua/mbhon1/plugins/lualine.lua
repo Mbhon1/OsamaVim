@@ -1,56 +1,19 @@
--- import lualine plugin safely
---local status, lualine = pcall(require, "lualine")
---if not status then
--- return
---end
-
--- get lualine nightfly theme
---local lualine_nightfly = require("lualine.themes.nightfly")
-
--- new colors for theme
---local new_colors = {
---blue = "#65D1FF",
---green = "#3EFFDC",
---pink = "#F20D54",
---yellow = "#FFDA7B",
---black = "#000000",
---}
-
--- change nightlfy theme colors
---lualine_nightfly.normal.a.bg = new_colors.blue
---lualine_nightfly.insert.a.bg = new_colors.green
---lualine_nightfly.visual.a.bg = new_colors.pink
---lualine_nightfly.command = {
---a = {
---gui = "bold",
---bg = new_colors.yellow,
---fg = new_colors.black, -- black
---},
---}
-
--- configure lualine with modified theme
---lualine.setup({
---options = {
---theme = lualine_nightfly,
---},
---})
---
 local lualine = require("lualine")
 
 -- Color table for highlights
 -- stylua: ignore
 local colors = {
-  bg       = '#202328',
+  bg       = '#3c3836',
   fg       = '#bbc2cf',
-  yellow   = '#ECBE7B',
-  cyan     = '#008080',
-  darkblue = '#081633',
-  green    = '#98be65',
-  orange   = '#FF8800',
-  violet   = '#a9a1e1',
-  magenta  = '#c678dd',
-  blue     = '#51afef',
-  red      = '#ec5f67',
+  yellow   = '#fabd2f',
+  cyan     = '#458588',
+  darkblue = '#b16286',
+  green    = '#b8bb26',
+  orange   = '#fe8019',
+  violet   = '#d3869b',
+  magenta  = '#689d6a',
+  blue     = '#83a598',
+  red      = '#cc241d',
 }
 
 local conditions = {
@@ -207,7 +170,7 @@ ins_left({
 		return msg
 	end,
 	icon = " LSP:",
-	color = { fg = "#ffffff", gui = "bold" },
+	color = { fg = "#ebdbb2", gui = "bold" },
 })
 
 -- Add components to right sections

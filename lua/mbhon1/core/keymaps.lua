@@ -95,4 +95,5 @@ map("n", "<leader>ql", [[<cmd>lua require("persistence").load({ last = true })<c
 -- stop Persistence => session won't be saved on exit
 map("n", "<leader>qd", [[<cmd>lua require("persistence").stop()<cr>]], { desc = "Stop Persistence" })
 
--- terminal
+-- file browser
+keymap.set("n", "<leader>sB", ":Telescope file_browser path=%:p:h=%:p:h<cr>", { desc = "Browse Files" })

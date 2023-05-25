@@ -24,10 +24,8 @@ local plugins = {
 	"catppuccin/nvim",
 	"rebelot/kanagawa.nvim",
 	"ellisonleao/gruvbox.nvim",
-	{
-		"olimorris/onedarkpro.nvim",
-		priority = 1000, -- ensure it loads
-	},
+	"olimorris/onedarkpro.nvim",
+	"xiyaowong/transparent.nvim", -- transparent plugin
 
 	"christoomey/vim-tmux-navigator", -- tmux & split window navigation
 
@@ -56,6 +54,13 @@ local plugins = {
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.1",
 		dependencies = { "nvim-lua/plenary.nvim" },
+	},
+	-- File browser
+	{
+		"nvim-telescope/telescope-file-browser.nvim",
+		config = function()
+			require("telescope").load_extension("file_browser")
+		end,
 	},
 	-- fuzzy path
 	-- {
@@ -145,17 +150,6 @@ local plugins = {
 	-- bufferline
 	{ "akinsho/bufferline.nvim", version = "v3.*", dependencies = { "nvim-tree/nvim-web-devicons" } },
 
-	-- transparent background
-	-- use("xiyaowong/transparent.nvim")
-	-- use("tribela/vim-transparent")
-
-	-- dashboard
-	{
-		"glepnir/dashboard-nvim",
-		event = "VimEnter",
-		dependencies = { { "nvim-tree/nvim-web-devicons" } },
-	},
-
 	-- Spectre search
 	"windwp/nvim-spectre",
 
@@ -205,10 +199,11 @@ local plugins = {
 	-- alpha
 	{
 		"goolord/alpha-nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
+		event = "VimEnter",
 		config = function()
 			require("alpha").setup(require("alpha.themes.dashboard").config)
 		end,
+		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
 
 	-- persistents
@@ -225,46 +220,17 @@ local plugins = {
 		end,
 	},
 
-	-- vista
-	--[[ 	use("liuchengxu/vista.vim") ]]
-
-	-- startify
-	--[[ "mhinz/vim-startify", ]]
-
 	-- testing multi curors
 	{ "mg979/vim-visual-multi", branch = "master" },
 
-	-- kitty
-	-- {
-	-- 	"garyhurtz/cmp_kitty",
-	-- 	dependencies = {
-	-- 		{ "hrsh7th/nvim-cmp" },
-	-- 	},
-	-- 	init = function()
-	-- 		require("cmp_kitty"):setup()
-	-- 	end,
-	-- },
-	--
 	-- jest tester
 	"David-Kunz/jester",
 
-	-- spotify
-	{
-		"KadoBOT/nvim-spotify",
-		dependencies = "nvim-telescope/telescope.nvim",
-		config = function()
-			local spotify = require("nvim-spotify")
+	-- live-server vs-code
+	"manzeloth/live-server",
 
-			spotify.setup({
-				-- default opts
-				status = {
-					update_interval = 10000, -- the interval (ms) to check for what's currently playing
-					format = "%s %t by %a", -- spotify-tui --format argument
-				},
-			})
-		end,
-		build = "make",
-	},
+	-- neoscroll for smooth scrolling
+	"karb94/neoscroll.nvim",
 }
 
 local opts = {}
