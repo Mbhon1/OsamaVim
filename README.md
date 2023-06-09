@@ -1,4 +1,3 @@
-```markdown
 <p align="center">
     <a href="https://github.com/mbhon1/neovim-config/issues">
     <img alt="GitHub issues" src="https://img.shields.io/github/issues/mbhon1/neovim-config?color=%23C6BC39&style=for-the-badge">
@@ -7,7 +6,6 @@
     <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/mbhon1/neovim-config?color=%2327d863&style=for-the-badge">
 </p>
 </p>
-```
 
 ## Intro
 
