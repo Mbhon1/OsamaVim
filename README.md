@@ -114,3 +114,6 @@ Lazygit
 
 Terminal
 ![Onefetch](./Screenshots/onefetch.png)
+
+Opacity toggle
+![Transparent](./Screenshots/transparent-off.png)
