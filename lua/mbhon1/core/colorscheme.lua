@@ -33,3 +33,5 @@ require("gruvbox").setup({
 	dim_inactive = false,
 	transparent_mode = true,
 })
+
+vim.g.gruvbox_transparent = vim.g.transparent_enabled

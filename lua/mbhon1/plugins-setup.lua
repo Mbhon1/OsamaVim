@@ -162,16 +162,6 @@ local plugins = {
 	-- todo comments
 	"folke/todo-comments.nvim",
 
-	-- mini animate
-	--[[ 	use("echasnovski/mini.nvim") ]]
-
-	-- session saver
-	{
-		"glepnir/dbsession.nvim",
-		cmd = { "SessionSave", "SessionDelete", "SessionLoad" },
-		--[[ opts = { --config --} ]]
-	},
-
 	-- notify
 	"rcarriga/nvim-notify",
 
@@ -183,9 +173,6 @@ local plugins = {
 		"folke/noice.nvim",
 		dependencies = {
 			"MunifTanjim/nui.nvim",
-			-- OPTIONAL:
-			--   `nvim-notify` is only needed, if you want to use the notification view.
-			--   If not available, we use `mini` as the fallback
 			"rcarriga/nvim-notify",
 		},
 	},
@@ -199,9 +186,34 @@ local plugins = {
 	-- alpha
 	{
 		"goolord/alpha-nvim",
-		event = "VimEnter",
+		-- event = "VimEnter",
 		config = function()
-			require("alpha").setup(require("alpha.themes.dashboard").config)
+			local alpha = require("alpha")
+			local dashboard = require("alpha.themes.dashboard")
+
+			dashboard.section.header.val = {
+				"                                                     ",
+				"  ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ ",
+				"  ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║ ",
+				"  ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║ ",
+				"  ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║ ",
+				"  ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ ",
+				"  ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ",
+				"                                                     ",
+				"                      @print_whoami                  ",
+			}
+
+			dashboard.section.buttons.val = {
+				dashboard.button("e", "  New file", "<cmd>ene <CR>"),
+				dashboard.button("SPC f f", "󰈞  Find file"),
+				dashboard.button("SPC f h", "󰊄  Recently opened files"),
+				dashboard.button("SPC s B", "  Browse Files"),
+				dashboard.button("SPC f s", "󰈬  Find word"),
+				dashboard.button("Lazy update", "  Lazy", "<cmd>Lazy update<CR>"),
+				dashboard.button("q", "  Quit NVIM", ":qa<CR>"),
+			}
+
+			alpha.setup(dashboard.opts)
 		end,
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
@@ -231,6 +243,20 @@ local plugins = {
 
 	-- neoscroll for smooth scrolling
 	"karb94/neoscroll.nvim",
+
+	-- Lazygit
+	{
+		"kdheepak/lazygit.nvim",
+		dependencies = {
+			"nvim-telescope/telescope.nvim",
+			"nvim-lua/plenary.nvim",
+		},
+		config = function()
+			require("telescope").load_extension("lazygit")
+		end,
+	},
+
+	"rmagatti/auto-session", -- Intelligent Neovim session manager
 }
 
 local opts = {}

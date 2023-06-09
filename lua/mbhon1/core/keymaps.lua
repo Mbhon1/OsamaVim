@@ -54,6 +54,7 @@ keymap.set("n", "<leader>gc", "<cmd>Telescope git_commits<cr>", { desc = "Git Co
 keymap.set("n", "<leader>gfc", "<cmd>Telescope git_bcommits<cr>", { desc = "Commits Current" }) -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
 keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>", { desc = "List Branches" }) -- list git branches (use <cr> to checkout) ["gb" for git branch]
 keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>", { desc = "Changes" }) -- list current changes per file with diff preview ["gs" for git status]
+keymap.set("n", "<leader>gg", ":LazyGit<CR>", { desc = "LazyGit" })
 
 -- restart lsp server
 keymap.set("n", "<leader>rs", ":LspRestart<CR>", {
@@ -97,3 +98,6 @@ map("n", "<leader>qd", [[<cmd>lua require("persistence").stop()<cr>]], { desc = 
 
 -- file browser
 keymap.set("n", "<leader>sB", ":Telescope file_browser path=%:p:h=%:p:h<cr>", { desc = "Browse Files" })
+
+-- executable file
+keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "Make File Executable" })
