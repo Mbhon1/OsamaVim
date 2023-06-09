@@ -1,3 +1,19 @@
+<div align="center">
+    <h1>Neovim Config
+    <br>
+    <a href="https://www.lua.org/">
+    <img
+        alt="Lua"
+        src="https://img.shields.io/badge/lua-%232C2D72.svg?style=for-the-badge&logo=lua&logoColor=white">
+    </a>
+    <a href="https://github.com/neovim/neovim">
+    <img
+        alt="Neovim"
+        src="https://img.shields.io/badge/NeoVim-%2357A143.svg?&style=for-the-badge&logo=neovim&logoColor=white">
+    </a>
+    </h1>
+</div>
+
 <p align="center">
     <a href="https://github.com/mbhon1/neovim-config/issues">
     <img alt="GitHub issues" src="https://img.shields.io/github/issues/mbhon1/neovim-config?color=%23C6BC39&style=for-the-badge">
@@ -85,16 +101,16 @@
 ## Screenshots
 
 Dashboard
-![Alpha](https://imagetolink.com/ib/rz0c8GAUm0)
+![Alpha](./Screenshots/alpha.png)
 
 Code snippet
-![Code](https://imagetolink.com/ib/pq5J4dSGjR)
+![Code](./Screenshots/code.png)
 
 Lazy package manager
-![Lazy](https://imagetolink.com/ib/Ceo7HHEYWZ)
+![Lazy](./Screenshots/lazy.png)
 
 Lazygit
-![Lazygit](https://imagetolink.com/ib/6bHSNIHEIO)
+![Lazygit](./Screenshots/lazygit.png)
 
-Onefetch
-![Onefetch](https://imagetolink.com/ib/qS1smQ1atx)
+Terminal
+![Onefetch](./Screenshots/onefetch.png)
