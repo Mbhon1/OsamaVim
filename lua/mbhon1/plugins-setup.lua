@@ -257,6 +257,9 @@ local plugins = {
 	},
 
 	"rmagatti/auto-session", -- Intelligent Neovim session manager
+
+	-- Zone screensaver
+	"tamton-aquib/zone.nvim",
 }
 
 local opts = {}
