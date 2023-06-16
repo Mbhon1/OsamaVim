@@ -30,9 +30,53 @@
 
 ## ⌨️ Configs and Usage
 
-- Clone the repo to your `git clone https://github.com/mbhon1/neovim-config ~/.config/nvim`.
-- If you don't have a tabnine account, you can remove the plugin from the `plugins-setup.lua` file by commenting it out or deleting the lines.
-- Enter this `:lua print(vim.fn.stdpath("data") .. "/live-server/")` command to enable [live-server.nvim](https://github.com/aurum77/live-server.nvim).
+- Make a backup of your `.config/nivm` before cloning repo.
+- Clone the repo `git clone https://github.com/mbhon1/neovim-config ~/.config/nvim`.
+- Learn more about tabnine [here](https://www.tabnine.com/) if you wish to use AI assistance.
+- Follow the guide on the official repo to enable [live-server.nvim](https://github.com/aurum77/live-server.nvim).
+
+## 🛠️ External Tools
+
+These tools can be installed using your distro's package manager such as `apt`, `pacman`, `yay`, etc.
+
+- lazygit
+- nodejs
+- npm
+- fzf
+- git
+- ripgrep
+
+## 🐚 Shell
+
+- zsh + starship + kitty
+
+![Onefetch](./Screenshots/onefetch.png)
+
+## 📸 Screenshots
+
+Dashboard
+
+![Alpha](./Screenshots/alpha.png)
+
+Transparency-off
+
+![Transparent](./Screenshots/transparent-off.png)
+
+Gruvbox theme
+
+![Code](./Screenshots/code.png)
+
+Screensaver
+
+![Zones](./Screenshots/zone.png)
+
+Lazy package manager
+
+![Lazy](./Screenshots/lazy.png)
+
+Lazygit
+
+![Lazygit](./Screenshots/lazygit.png)
 
 ## 📂 File Structure
 
@@ -84,47 +128,3 @@
 │       └── remap.lua
 └── README.md
 ```
-
-## 🛠️ External Tools
-
-- lazygit
-- nodejs
-- npm
-- fzf
-- git
-- ripgrep
-- pip
-- nerd fonts.
-- onefetch
-
-## 🐚 Shell
-
-- zsh + starship + kitty
-
-![Onefetch](./Screenshots/onefetch.png)
-
-## 📸 Screenshots
-
-Dashboard
-
-![Alpha](./Screenshots/alpha.png)
-
-Transparency-off
-
-![Transparent](./Screenshots/transparent-off.png)
-
-Gruvbox theme
-
-![Code](./Screenshots/code.png)
-
-Screensaver
-
-![Zones](./Screenshots/zone.png)
-
-Lazy package manager
-
-![Lazy](./Screenshots/lazy.png)
-
-Lazygit
-
-![Lazygit](./Screenshots/lazygit.png)

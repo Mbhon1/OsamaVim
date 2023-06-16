@@ -72,7 +72,7 @@ local plugins = {
 	"hrsh7th/nvim-cmp", -- completion plugin
 	"hrsh7th/cmp-buffer", -- source for text in buffer
 	"hrsh7th/cmp-path", -- source for file system paths
-	{ "tzachar/cmp-tabnine", build = "./install.sh", dependencies = { "hrsh7th/nvim-cmp" } },
+	--[[ { "tzachar/cmp-tabnine", build = "./install.sh", dependencies = { "hrsh7th/nvim-cmp" } },  ]]
 	-- tabnine auto-predection
 
 	-- snippets
