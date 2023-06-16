@@ -23,7 +23,7 @@
 </p>
 </p>
 
-## ✍️I Intro
+## ✍️ Intro
 
 - Highly customisable
 - Uses [lazy.nvim](https://github.com/folke/lazy.nvim) as plugin manager
