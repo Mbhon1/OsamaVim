@@ -1,34 +1,11 @@
-require("mbhon1.plugins-setup")
-require("mbhon1.core.options")
-require("mbhon1.core.keymaps")
-require("mbhon1.core.colorscheme")
-require("mbhon1.plugins.comment")
-require("mbhon1.plugins.nvim-tree")
-require("mbhon1.plugins.lualine")
-require("mbhon1.plugins.telescope")
-require("mbhon1.plugins.nvim-cmp")
-require("mbhon1.plugins.lsp.mason")
-require("mbhon1.plugins.lsp.lspsaga")
-require("mbhon1.plugins.lsp.lspconfig")
-require("mbhon1.plugins.lsp.null-ls")
-require("mbhon1.plugins.autopairs")
-require("mbhon1.plugins.treesitter")
-require("mbhon1.plugins.gitsigns")
--- require("mbhon1.plugins.tabnine")
-require("mbhon1.plugins.colorizer")
-require("mbhon1.plugins.indent")
-require("mbhon1.plugins.lsp-lines")
-require("mbhon1.plugins.bufferline")
-require("mbhon1.plugins.dashboard")
-require("mbhon1.plugins.spectre")
-require("mbhon1.plugins.which-key")
-require("mbhon1.plugins.vim-illuminate")
-require("mbhon1.plugins.todo-comments")
-require("mbhon1.plugins.dressing")
-require("mbhon1.plugins.noice")
---[[ require("mbhon1.plugins.dbsession") ]]
-require("mbhon1.plugins.tailwindcss")
-require("mbhon1.plugins.transparent")
-require("mbhon1.plugins.auto-sessions")
-require("mbhon1.plugins.notify")
-require("mbhon1.plugins.zone")
+local name = "gruvbox"
+
+require "core"
+require "plugin-loader"
+
+-- Check for theme configuration
+-- Theme configs are can be found on lua/plugins/theme
+pcall(require, "plugins.theme." .. name)
+
+-- Set the theme
+vim.cmd.colorscheme(name)
