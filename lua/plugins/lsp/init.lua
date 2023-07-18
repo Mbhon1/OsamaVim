@@ -53,19 +53,10 @@ return {
           "lua_ls",
           "clangd",
           "pyright",
-          --[[ "intelephense", ]]
           "cssls",
           "html",
           "tsserver",
           "emmet_ls",
-          -- "omnisharp",
-          --[[ "jdtls", ]]
-          -- "yamlls",
-          -- "gopls",
-          -- "lemminx",
-          "vimls",
-          -- "cmake",
-          -- "powershell_es",
         }
 
         mason.setup {

@@ -1,6 +1,6 @@
 return {
   "SmiteshP/nvim-navic",
-  lazy = true,
+  lazy = false,
   init = function()
     vim.g.navic_silence = true
     -- require("plugins.lsp.init").on_attach(function(client, buffer)

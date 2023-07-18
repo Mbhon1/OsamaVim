@@ -28,6 +28,9 @@
 - Highly customisable
 - Uses [lazy.nvim](https://github.com/folke/lazy.nvim) as plugin manager
 
+## Installation
+<!-- TODO: -->
+
 ## ⌨️ Configs and Usage
 
 - Make a backup of your `.config/nivm` before cloning repo.
@@ -81,50 +84,100 @@ Lazygit
 ## 📂 File Structure
 
 ```
-.
-├── init.lua
-├── lazy-lock.json
-├── lua
-│   └── mbhon1
-│       ├── core
-│       │   ├── colorscheme.lua
-│       │   ├── keymaps.lua
-│       │   └── options.lua
-│       ├── init.lua
-│       ├── plugins
-│       │   ├── alpha.lua
-│       │   ├── autopairs.lua
-│       │   ├── auto-sessions.lua
-│       │   ├── bufferline.lua
-│       │   ├── colorizer.lua
-│       │   ├── comment.lua
-│       │   ├── dashboard.lua
-│       │   ├── dbsession.lua
-│       │   ├── dressing.lua
-│       │   ├── gitsigns.lua
-│       │   ├── indent.lua
-│       │   ├── lsp
-│       │   │   ├── lspconfig.lua
-│       │   │   ├── lspsaga.lua
-│       │   │   ├── mason.lua
-│       │   │   └── null-ls.lua
-│       │   ├── lsp-lines.lua
-│       │   ├── lualine.lua
-│       │   ├── neoscroll.lua
-│       │   ├── noice.lua
-│       │   ├── notify.lua
-│       │   ├── nvim-cmp.lua
-│       │   ├── nvim-tree.lua
-│       │   ├── spectre.lua
-│       │   ├── tabnine.lua
-│       │   ├── tailwindcss.lua
-│       │   ├── telescope.lua
-│       │   ├── todo-comments.lua
-│       │   ├── transparent.lua
-│       │   ├── treesitter.lua
-│       │   ├── vim-illuminate.lua
-│       │   └── which-key.lua
-│       ├── plugins-setup.lua
-│       └── remap.lua
-└── README.md
+ .
+├──  ftplugin
+│   └──  java.lua
+├──  init.lua
+├──  lua
+│   ├──  core
+│   │   ├──  autocommands.lua
+│   │   ├──  init.lua
+│   │   ├──  keymaps.lua
+│   │   ├──  options.lua
+│   │   └──  utils.lua
+│   ├──  plugin-loader.lua
+│   └──  plugins
+│       ├──  alpha
+│       │   ├──  dashboard.lua.bak
+│       │   ├──  init.lua.bak
+│       │   └──  startify.lua.bak
+│       ├──  alpha.lua
+│       ├──  autopairs.lua
+│       ├──  buffer-remove.lua
+│       ├──  bufferline.lua
+│       ├──  cmp.lua
+│       ├──  colorizer.lua
+│       ├──  comment.lua
+│       ├──  dap
+│       │   ├──  cpptools.lua
+│       │   ├──  debugpy.lua
+│       │   ├──  delve.lua
+│       │   ├──  init.lua
+│       │   ├──  js-debug.lua
+│       │   └──  node-debug2.lua
+│       ├──  fidget.lua
+│       ├──  file-browser.lua
+│       ├──  flash.lua
+│       ├──  gitsigns.lua
+│       ├──  jaq.lua.bak
+│       ├──  lsp
+│       │   ├──  handlers.lua
+│       │   ├──  init.lua
+│       │   └──  settings
+│       │       ├──  clangd.lua
+│       │       ├──  jdtls.lua
+│       │       ├──  jsonls.lua
+│       │       ├──  lua_ls.lua
+│       │       ├──  pyright.lua
+│       │       └──  yamlls.lua
+│       ├──  lspsaga.lua
+│       ├──  lualine
+│       │   ├──  components.lua
+│       │   ├──  init.lua
+│       │   ├──  modes.lua
+│       │   └──  theme.lua
+│       ├──  navic.lua
+│       ├──  neo-tree.lua.bak
+│       ├──  neorg.lua.bak
+│       ├──  noice.lua
+│       ├──  null-ls.lua
+│       ├──  nvim-tree.lua
+│       ├──  persistence.lua
+│       ├──  spectre.lua
+│       ├──  tabset.lua
+│       ├──  telescope.lua
+│       ├──  theme
+│       │   ├──  catppuccin.lua
+│       │   ├──  dracula.lua
+│       │   ├──  gruvbox.lua
+│       │   ├──  init.lua
+│       │   ├──  kanagawa.lua
+│       │   ├──  material.lua
+│       │   ├──  nightly.lua
+│       │   ├──  onedark.lua
+│       │   └──  tokyonight.lua
+│       ├──  todo-comments.lua
+│       ├──  toggleterm.lua
+│       ├──  treesitter.lua
+│       ├──  undotree.lua
+│       ├──  utils.lua
+│       └──  which-key.lua
+├──  README.md
+├──  Screenshots
+│   ├──  alpha.png
+│   ├──  code.png
+│   ├──  lazy.png
+│   ├──  lazygit.png
+│   ├──  onefetch.png
+│   ├──  transparent-off.png
+│   └──  zone.png
+├──  snippets
+│   ├──  snipmate
+│   │   └──  cpp.snippets
+│   └──  vscode
+│       ├──  cpp.json
+│       └──  package.json
+└──  stylua.toml
 ```
+
+## Contributions
