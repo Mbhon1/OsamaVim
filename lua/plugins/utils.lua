@@ -82,6 +82,7 @@ return {
         stages = "fade",
         timeout = 2000,
         top_down = true,
+        background_colour = "#000000",
       }
 
       vim.notify = require "notify"
