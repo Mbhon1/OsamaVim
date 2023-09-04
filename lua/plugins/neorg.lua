@@ -9,7 +9,7 @@ return {
         ["core.dirman"] = { -- Manages Neorg workspaces
           config = {
             workspaces = {
-              school = "~/notes/school",
+              school = "~/Documents/Codecademy",
             },
           },
         },

@@ -1,5 +1,5 @@
 <div align="center">
-    <h1>Neovim Config
+    <h1>ŌsamaVim
     <br>
     <a href="https://www.lua.org/">
     <img
@@ -20,7 +20,6 @@
     </a>
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/mbhon1/neovim-config?color=%23C63989&style=for-the-badge">
     <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/mbhon1/neovim-config?color=%2327d863&style=for-the-badge">
-</p>
 </p>
 
 ## ✍️ Intro
@@ -61,123 +60,108 @@ Dashboard
 
 ![Alpha](./Screenshots/alpha.png)
 
-Transparency-off
-
-![Transparent](./Screenshots/transparent-off.png)
-
-Gruvbox theme
-
-![Code](./Screenshots/code.png)
-
-Screensaver
-
-![Zones](./Screenshots/zone.png)
-
-Lazy package manager
-
-![Lazy](./Screenshots/lazy.png)
-
-Lazygit
-
-![Lazygit](./Screenshots/lazygit.png)
-
 ## 📂 File Structure
 
 ```
- .
-├──  ftplugin
-│   └──  java.lua
-├──  init.lua
-├──  lua
-│   ├──  core
-│   │   ├──  autocommands.lua
-│   │   ├──  init.lua
-│   │   ├──  keymaps.lua
-│   │   ├──  options.lua
-│   │   └──  utils.lua
-│   ├──  plugin-loader.lua
-│   └──  plugins
-│       ├──  alpha
-│       │   ├──  dashboard.lua.bak
-│       │   ├──  init.lua.bak
-│       │   └──  startify.lua.bak
-│       ├──  alpha.lua
-│       ├──  autopairs.lua
-│       ├──  buffer-remove.lua
-│       ├──  bufferline.lua
-│       ├──  cmp.lua
-│       ├──  colorizer.lua
-│       ├──  comment.lua
-│       ├──  dap
-│       │   ├──  cpptools.lua
-│       │   ├──  debugpy.lua
-│       │   ├──  delve.lua
-│       │   ├──  init.lua
-│       │   ├──  js-debug.lua
-│       │   └──  node-debug2.lua
-│       ├──  fidget.lua
-│       ├──  file-browser.lua
-│       ├──  flash.lua
-│       ├──  gitsigns.lua
-│       ├──  jaq.lua.bak
-│       ├──  lsp
-│       │   ├──  handlers.lua
-│       │   ├──  init.lua
-│       │   └──  settings
-│       │       ├──  clangd.lua
-│       │       ├──  jdtls.lua
-│       │       ├──  jsonls.lua
-│       │       ├──  lua_ls.lua
-│       │       ├──  pyright.lua
-│       │       └──  yamlls.lua
-│       ├──  lspsaga.lua
-│       ├──  lualine
-│       │   ├──  components.lua
-│       │   ├──  init.lua
-│       │   ├──  modes.lua
-│       │   └──  theme.lua
-│       ├──  navic.lua
-│       ├──  neo-tree.lua.bak
-│       ├──  neorg.lua.bak
-│       ├──  noice.lua
-│       ├──  null-ls.lua
-│       ├──  nvim-tree.lua
-│       ├──  persistence.lua
-│       ├──  spectre.lua
-│       ├──  tabset.lua
-│       ├──  telescope.lua
-│       ├──  theme
-│       │   ├──  catppuccin.lua
-│       │   ├──  dracula.lua
-│       │   ├──  gruvbox.lua
-│       │   ├──  init.lua
-│       │   ├──  kanagawa.lua
-│       │   ├──  material.lua
-│       │   ├──  nightly.lua
-│       │   ├──  onedark.lua
-│       │   └──  tokyonight.lua
-│       ├──  todo-comments.lua
-│       ├──  toggleterm.lua
-│       ├──  treesitter.lua
-│       ├──  undotree.lua
-│       ├──  utils.lua
-│       └──  which-key.lua
-├──  README.md
-├──  Screenshots
-│   ├──  alpha.png
-│   ├──  code.png
-│   ├──  lazy.png
-│   ├──  lazygit.png
-│   ├──  onefetch.png
-│   ├──  transparent-off.png
-│   └──  zone.png
-├──  snippets
-│   ├──  snipmate
-│   │   └──  cpp.snippets
-│   └──  vscode
-│       ├──  cpp.json
-│       └──  package.json
-└──  stylua.toml
+.
+├── ftplugin
+│  └── java.lua
+├── lua
+│  ├── core
+│  │  ├── autocommands.lua
+│  │  ├── init.lua
+│  │  ├── keymaps.lua
+│  │  ├── options.lua
+│  │  └── utils.lua
+│  ├── plugins
+│  │  ├── alpha
+│  │  │  ├── dashboard.lua.bak
+│  │  │  ├── init.lua.bak
+│  │  │  └── startify.lua.bak
+│  │  ├── dap
+│  │  │  ├── cpptools.lua
+│  │  │  ├── debugpy.lua
+│  │  │  ├── delve.lua
+│  │  │  ├── init.lua
+│  │  │  ├── js-debug.lua
+│  │  │  └── node-debug2.lua
+│  │  ├── lsp
+│  │  │  ├── settings
+│  │  │  │  ├── clangd.lua
+│  │  │  │  ├── jdtls.lua
+│  │  │  │  ├── jsonls.lua
+│  │  │  │  ├── lua_ls.lua
+│  │  │  │  ├── pyright.lua
+│  │  │  │  └── yamlls.lua
+│  │  │  ├── handlers.lua
+│  │  │  └── init.lua
+│  │  ├── lualine
+│  │  │  ├── components.lua
+│  │  │  ├── init.lua
+│  │  │  ├── modes.lua
+│  │  │  └── theme.lua
+│  │  ├── theme
+│  │  │  ├── catppuccin.lua
+│  │  │  ├── dracula.lua
+│  │  │  ├── gruvbox.lua
+│  │  │  ├── init.lua
+│  │  │  ├── kanagawa.lua
+│  │  │  ├── material.lua
+│  │  │  ├── nightly.lua
+│  │  │  ├── onedark.lua
+│  │  │  └── tokyonight.lua
+│  │  ├── alpha.lua
+│  │  ├── autopairs.lua
+│  │  ├── buffer-remove.lua
+│  │  ├── bufferline.lua
+│  │  ├── cmp.lua
+│  │  ├── colorizer.lua
+│  │  ├── comment.lua
+│  │  ├── fidget.lua
+│  │  ├── file-browser.lua
+│  │  ├── flash.lua
+│  │  ├── gitsigns.lua
+│  │  ├── jaq.lua
+│  │  ├── lspsaga.lua
+│  │  ├── navic.lua
+│  │  ├── neo-tree.lua.bak
+│  │  ├── neorg.lua
+│  │  ├── neotest.lua
+│  │  ├── noice.lua
+│  │  ├── null-ls.lua
+│  │  ├── nvim-tree.lua
+│  │  ├── obsidian.lua
+│  │  ├── persistence.lua
+│  │  ├── regexplainer.lua
+│  │  ├── spectre.lua
+│  │  ├── tabset.lua
+│  │  ├── telescope.lua
+│  │  ├── todo-comments.lua
+│  │  ├── toggleterm.lua
+│  │  ├── treesitter.lua
+│  │  ├── undotree.lua
+│  │  ├── utils.lua
+│  │  └── which-key.lua
+│  └── plugin-loader.lua
+├── Screenshots
+│  ├── alpha.png
+│  ├── code.png
+│  ├── lazy.png
+│  ├── lazygit.png
+│  ├── onefetch.png
+│  ├── transparent-off.png
+│  └── zone.png
+├── snippets
+│  ├── snipmate
+│  │  └── cpp.snippets
+│  └── vscode
+│     ├── cpp.json
+│     └── package.json
+├── init.lua
+├── README.md
+└── stylua.toml
 ```
 
 ## Contributions
+
+Encounter bugs? Feel free to open issues before submitting a pull request.

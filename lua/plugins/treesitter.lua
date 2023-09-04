@@ -16,7 +16,7 @@ return {
     "JoosepAlviste/nvim-ts-context-commentstring",
     {
       "lukas-reineke/indent-blankline.nvim",
-      enabled = false,
+      enabled = true,
       config = function()
         local indent_blankline = require "indent_blankline"
 
