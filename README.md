@@ -28,14 +28,17 @@
 - Uses [lazy.nvim](https://github.com/folke/lazy.nvim) as plugin manager
 
 ## Installation
+
 <!-- TODO: -->
 
 ## ⌨️ Configs and Usage
 
-- Make a backup of your `.config/nivm` before cloning repo.
-- Clone the repo `git clone https://github.com/mbhon1/neovim-config ~/.config/nvim`.
+- Make a backup of your `.config/nvim` before cloning repo.
+- Clone the repo `git clone https://github.com/Mbhon1/OsamaVim ~/.config/nvim`.
 - Learn more about tabnine [here](https://www.tabnine.com/) if you wish to use AI assistance.
 - Follow the guide on the official repo to enable [live-server.nvim](https://github.com/aurum77/live-server.nvim).
+- Use Mason to install LSP's `leader/space-button + l + m`.
+- To update, you can simply hit `l` while on the dashboard to open up `Lazy package manager` and run updates.
 
 ## 🛠️ External Tools
 
@@ -143,14 +146,6 @@ Dashboard
 │  │  ├── utils.lua
 │  │  └── which-key.lua
 │  └── plugin-loader.lua
-├── Screenshots
-│  ├── alpha.png
-│  ├── code.png
-│  ├── lazy.png
-│  ├── lazygit.png
-│  ├── onefetch.png
-│  ├── transparent-off.png
-│  └── zone.png
 ├── snippets
 │  ├── snipmate
 │  │  └── cpp.snippets
